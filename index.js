@@ -12,7 +12,6 @@ mongoose.connect("mongodb+srv://henorch01:fGwz0p9jJJbN5hUx@damart.3escttb.mongod
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    introspection: true,
     cors: {
         origin:'*',
         credentials: true
