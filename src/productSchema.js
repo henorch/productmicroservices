@@ -1,7 +1,12 @@
 import mongoose from "mongoose"; 
 const Schema = mongoose.Schema
 
+
+
 const productSchema =  new mongoose.Schema({
+   code: {
+      type: Number,
+   },
          name: {
            type: String,
            required: true,
@@ -12,10 +17,9 @@ const productSchema =  new mongoose.Schema({
            required: true,
            min:0 
         },
-        image: [{
-           type: String,
-           description: String   
-        }],
+        image: {
+           type: String,  
+        },
         description: {
            type: String,
            required: true,   
@@ -23,6 +27,7 @@ const productSchema =  new mongoose.Schema({
         make:{
            type: String,   
         },
+        
 })
 
 const Products = mongoose.model('Products', productSchema)

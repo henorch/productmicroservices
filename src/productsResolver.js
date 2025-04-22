@@ -15,9 +15,23 @@ const resolvers = {
             }            
         },
         searchProuctbyString: async (_, {contain}) => {
-            
+            try {
+                const productBytext = await productService.searchProuctbyString()
+                return productBytext
+            } catch (error) {
+                console.log(`cant return that product`);
+                throw error
+            }            
+           
         },
         searchProductbyPrice: async (_, {price}) => {
+            try {
+                const productByPrice = await productService.searchProductbyPrice()
+                return productByPrice
+            } catch (error) {
+                console.log(`cant return that product`);
+                throw error
+            }            
             
         }
     }

@@ -22,7 +22,7 @@ const productService = {
     },
     searchProductbyPrice: async (price) => {
         try {
-            const priceSearch = await Products.find(price == Products.price === price)
+            const priceSearch = await Products.find(price == Products.price <= price)
             return priceSearch
         } catch (error) {
             console.error(`There is no product in that price range `);
